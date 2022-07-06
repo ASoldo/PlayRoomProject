@@ -1,0 +1,17 @@
+{
+  "Bracket": {
+    "description": "Auto imported from components/Bracket.vue"
+  },
+  "BracketItem": {
+    "description": "Auto imported from components/BracketItem.vue"
+  },
+  "NuxtLogo": {
+    "description": "Auto imported from components/NuxtLogo.vue"
+  },
+  "Tutorial": {
+    "description": "Auto imported from components/Tutorial.vue"
+  },
+  "VuetifyLogo": {
+    "description": "Auto imported from components/VuetifyLogo.vue"
+  }
+}
