@@ -1,0 +1,14 @@
+[
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "C:\\\\Users\\\\Korisnik\\\\Documents\\\\PlayRoomProject\\\\pages\\\\inspire.vue",
+    "chunkName": "pages/inspire"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\Korisnik\\\\Documents\\\\PlayRoomProject\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]
