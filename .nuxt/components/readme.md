@@ -8,6 +8,7 @@ You can directly use them in pages and other components without the need to impo
 
 - `<Bracket>` | `<bracket>` (components/Bracket.vue)
 - `<BracketItem>` | `<bracket-item>` (components/BracketItem.vue)
+- `<Chart>` | `<chart>` (components/Chart.vue)
 - `<NuxtLogo>` | `<nuxt-logo>` (components/NuxtLogo.vue)
 - `<Tutorial>` | `<tutorial>` (components/Tutorial.vue)
 - `<VuetifyLogo>` | `<vuetify-logo>` (components/VuetifyLogo.vue)

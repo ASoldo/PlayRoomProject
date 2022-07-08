@@ -5,6 +5,9 @@
   "BracketItem": {
     "description": "Auto imported from components/BracketItem.vue"
   },
+  "Chart": {
+    "description": "Auto imported from components/Chart.vue"
+  },
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },

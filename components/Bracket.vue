@@ -1,9 +1,34 @@
+
+<template>
+  <div class="tournament-brackets">
+    <div class="bracket">
+      <template v-for="(round, index) in rounds">
+        <div class="round" :key="index" :class="['round-' + round]">
+          <template v-for="(match, matchIndex) in round">
+            <div class="match" :key="matchIndex">
+              <div class="match__content" :style="matchStyle">
+                <!-- <p v-if="index === 0">{{users[matchIndex].username}}</p>
+                        <p v-if="index === 1">{{users[matchIndex].username}}</p> -->
+                <!-- <p v-for="(item, key) in users" :key="key" v-if="index === key && key === roundx || round > index">
+                  {{ users[matchIndex].username }}</p> -->
+                <!-- <v-btn @click="log(index)" block small color="success">{{ users[matchIndex]?.username }} {{index}} {{matchIndex}}</v-btn> -->
+                <BracketItem :index="index" :matchIndex="matchIndex" :rounds="rounds[0]"></BracketItem>
+              </div>
+            </div>
+          </template>
+        </div>
+      </template>
+    </div>
+    <!-- <div id="child-component" :style="{'background-color': bgColor}"><p>hello</p></div> -->
+  </div>
+</template>
+
 <script>
 import BracketItem from './BracketItem.vue'
 const defaultRounds = [256, 128, 64, 32, 16, 8, 4, 2, 1]
 
 export default {
-    name: "bracket",
+    name: "bracketz",
     props: {
         bracketSize: {
             type: Number,
@@ -39,8 +64,9 @@ export default {
             users: [
                 { username: "Soldo" },
                 { username: "Vili" },
-            ]
-        };
+            ],
+            bgColor: 'red'
+        }
     },
     methods: {
         log(matchIndex) {
@@ -51,30 +77,11 @@ export default {
 }
 </script>
 
-<template>
-  <div class="tournament-brackets">
-    <div class="bracket">
-      <template v-for="(round, index) in rounds">
-        <div class="round" :key="index" :class="['round-' + round]">
-          <template v-for="(match, matchIndex) in round">
-            <div class="match" :key="matchIndex">
-              <div class="match__content" :style="matchStyle">
-                <!-- <p v-if="index === 0">{{users[matchIndex].username}}</p>
-                        <p v-if="index === 1">{{users[matchIndex].username}}</p> -->
-                <!-- <p v-for="(item, key) in users" :key="key" v-if="index === key && key === roundx || round > index">
-                  {{ users[matchIndex].username }}</p> -->
-                <!-- <v-btn @click="log(index)" block small color="success">{{ users[matchIndex]?.username }} {{index}} {{matchIndex}}</v-btn> -->
-                <BracketItem :index="index" :matchIndex="matchIndex" :rounds="rounds[0]"></BracketItem>
-              </div>
-            </div>
-          </template>
-        </div>
-      </template>
-    </div>
-  </div>
-</template>
-
 <style>
+
+#child-component-item {
+      background-color: var(--bgColor)
+   }
 
 .tournament-brackets{
   overflow-x: scroll;

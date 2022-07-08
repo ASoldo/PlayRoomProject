@@ -1,5 +1,6 @@
 export { default as Bracket } from '../..\\components\\Bracket.vue'
 export { default as BracketItem } from '../..\\components\\BracketItem.vue'
+export { default as Chart } from '../..\\components\\Chart.vue'
 export { default as NuxtLogo } from '../..\\components\\NuxtLogo.vue'
 export { default as Tutorial } from '../..\\components\\Tutorial.vue'
 export { default as VuetifyLogo } from '../..\\components\\VuetifyLogo.vue'

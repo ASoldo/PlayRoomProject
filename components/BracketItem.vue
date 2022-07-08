@@ -9,7 +9,7 @@
           :disabled="disabled"
           :color="selectedcolor"
           @click="clickOnButton(); playParty($refs.btn.$el)"
-          block small>{{index}} {{matchIndex}} {{rounds[index]}} {{matchIndex % 2 ? matchIndex / 2 - 0.5 : matchIndex / 2}}</v-btn>
+          block small> <v-icon>mdi-account</v-icon>{{index}} {{matchIndex}} {{rounds[index]}} {{matchIndex % 2 ? matchIndex / 2 - 0.5 : matchIndex / 2}} <v-icon>mdi-crown-circle</v-icon></v-btn>
         </template>
         <span>{{matchIndex}}</span>
       </v-tooltip>

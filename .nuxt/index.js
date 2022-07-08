@@ -15,6 +15,7 @@ import { createStore } from './store.js'
 
 import nuxt_plugin_plugin_1ab27760 from 'nuxt_plugin_plugin_1ab27760' // Source: .\\components\\plugin.js (mode: 'all')
 import nuxt_plugin_plugin_4ad78094 from 'nuxt_plugin_plugin_4ad78094' // Source: .\\vuetify\\plugin.js (mode: 'all')
+import nuxt_plugin_vueapexchartclient_0aadf846 from 'nuxt_plugin_vueapexchartclient_0aadf846' // Source: ..\\plugins\\vue-apexchart.client.js (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -217,6 +218,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_plugin_4ad78094 === 'function') {
     await nuxt_plugin_plugin_4ad78094(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vueapexchartclient_0aadf846 === 'function') {
+    await nuxt_plugin_vueapexchartclient_0aadf846(app.context, inject)
   }
 
   // Lock enablePreview in context

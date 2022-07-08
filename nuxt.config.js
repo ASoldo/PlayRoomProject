@@ -42,6 +42,11 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
   ],
+  plugins: [
+    {
+      src: "~/plugins/vue-apexchart.client.js", ssr: false
+    },
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -76,6 +81,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    vendor: [
+      'vue-apexchart',
+    ]
   },
   // Custom server configurations
   server: {
