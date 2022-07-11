@@ -7,7 +7,9 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "test": "jest"
+    "test": "jest",
+    "styleguide": "vue-styleguidist server --config styleguide.config.js",
+    "styleguide:build": "vue-styleguidist build --config styleguide.config.js"
   },
   "dependencies": {
     "apexcharts": "^3.35.3",
@@ -26,6 +28,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^27.4.4",
     "jest": "^27.4.4",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "^3.0.4",
+    "vue-styleguidist": "^4.46.1"
   }
 }

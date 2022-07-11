@@ -1,89 +1,94 @@
-
 <template>
   <div class="tournament-brackets">
+    <!-- <div style="width: 100%; height: 30px; background-color: blue; position: relative; display: block;">
+      </div> -->
+
     <div class="bracket">
+      <!-- <template v-for="(round, index) in rounds"> -->
       <template v-for="(round, index) in rounds">
         <div class="round" :key="index" :class="['round-' + round]">
           <template v-for="(match, matchIndex) in round">
             <div class="match" :key="matchIndex">
               <div class="match__content" :style="matchStyle">
-                <!-- <p v-if="index === 0">{{users[matchIndex].username}}</p>
-                        <p v-if="index === 1">{{users[matchIndex].username}}</p> -->
-                <!-- <p v-for="(item, key) in users" :key="key" v-if="index === key && key === roundx || round > index">
-                  {{ users[matchIndex].username }}</p> -->
-                <!-- <v-btn @click="log(index)" block small color="success">{{ users[matchIndex]?.username }} {{index}} {{matchIndex}}</v-btn> -->
-                <BracketItem :index="index" :matchIndex="matchIndex" :rounds="rounds[0]"></BracketItem>
+                <BracketItem
+                  :index="index"
+                  :matchIndex="matchIndex"
+                  :rounds="rounds[0]"
+                ></BracketItem>
               </div>
             </div>
           </template>
         </div>
       </template>
     </div>
+
     <!-- <div id="child-component" :style="{'background-color': bgColor}"><p>hello</p></div> -->
   </div>
 </template>
 
 <script>
-import BracketItem from './BracketItem.vue'
-const defaultRounds = [256, 128, 64, 32, 16, 8, 4, 2, 1]
+import BracketItem from "./BracketItem.vue";
+const defaultRounds = [256, 128, 64, 32, 16, 8, 4, 2, 1];
 
 export default {
-    name: "bracketz",
-    props: {
-        bracketSize: {
-            type: Number,
-            default: 8
-        },
-        matchStyle: {
-            type: Object,
-            default: () => ({
-                width: "100%",
-                height: "30px",
-                position: "relative"
-            })
-        },
-        usersz: {
-            type: Object,
-            default: () => ({
-                users: []
-            })
-        },
-        roundx: {
-            type: Number,
-            default: 0
-        }
+  name: "bracketz",
+  components: { BracketItem },
+  props: {
+    bracketSize: {
+      type: Number,
+      default: 8,
     },
-    computed: {
-        rounds() {
-            return defaultRounds.filter(rounds => rounds <= this.bracketSize);
-        }
+    matchStyle: {
+      type: Object,
+      default: () => ({
+        width: "100%",
+        height: "30px",
+        position: "relative",
+      }),
     },
-    data() {
-        return {
-            roundZ: 0,
-            users: [
-                { username: "Soldo" },
-                { username: "Vili" },
-            ],
-            bgColor: 'red'
-        }
+    usersz: {
+      type: Object,
+      default: () => ({
+        users: [],
+      }),
     },
-    methods: {
-        log(matchIndex) {
-            console.log("clicked on" + matchIndex);
-        }
+    roundx: {
+      type: Number,
+      default: 0,
     },
-    components: { BracketItem }
-}
+  },
+  computed: {
+    rounds() {
+      //this.bracketSize
+      return defaultRounds.filter(
+        (rounds) => rounds <= this.$store.state.tournamentData[0].players.length
+      );
+    },
+  },
+  data() {
+    return {
+      roundZ: 0,
+      users: [{ username: "Soldo" }, { username: "Vili" }],
+      bgColor: "red",
+    };
+  },
+  methods: {
+    log(matchIndex) {
+      console.log("clicked on" + matchIndex);
+    },
+  },
+  created() {
+    console.log(this.$store.state.tournamentData);
+  },
+};
 </script>
 
 <style>
-
 #child-component-item {
-      background-color: var(--bgColor)
-   }
+  background-color: var(--bgColor);
+}
 
-.tournament-brackets{
+.tournament-brackets {
   overflow-x: scroll;
   overflow-y: scroll;
   scrollbar-width: 10px;
@@ -96,17 +101,15 @@ export default {
 
 .bracket {
   display: flex;
-
 }
 
 .round {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-
 }
 
-.round:hover{
+.round:hover {
   background-color: rgba(0, 183, 255, 0.445);
 }
 

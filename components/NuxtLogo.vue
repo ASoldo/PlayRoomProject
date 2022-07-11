@@ -9,3 +9,9 @@
   height: 180px;
 }
 </style>
+
+<docs lang="md">
+```jsx
+<NuxtLogo></NuxtLogo>
+```
+</docs>
